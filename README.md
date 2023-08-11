@@ -175,3 +175,14 @@ Expected Result:
 | IT | 60000.00 |
 | HR | 52500.00 |
 | Finance | 52000.00 |
+
+```sql
+-- ANSWER - 4 ✅
+
+    SELECT department_name, AVG(salary) AS avg_salary 
+    FROM employees e 
+    JOIN salaries s ON e.emp_id = s.emp_id 
+    JOIN departments d ON e.department_id = d.department_id 
+    GROUP BY d.department_name -- complex part
+    ORDER BY avg_salary DESC;
+```

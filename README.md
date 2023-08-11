@@ -55,3 +55,9 @@ Expected Result:
 | customer_id | average_total_amount |
 |----------------|----------------------|
 | 2 | 275.00 |
+
+```sql
+-- ANSWARE 2
+
+SELECT customer_id, total_amount FROM orders WHERE total_amount >= 250;
+```

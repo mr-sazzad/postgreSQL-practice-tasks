@@ -25,7 +25,7 @@ Expected Result:
 | Emily Brown | 52000.00 |
 
 ```sql
--- ANSWARE 1
+-- ANSWER 1 ✅
 
 SELECT emp_name, salary FROM employees WHERE department = 'HR';
 ```
@@ -57,7 +57,7 @@ Expected Result:
 | 2 | 275.00 |
 
 ```sql
--- ANSWARE 2
+-- ANSWER 2 ✅
 
 SELECT customer_id, total_amount FROM orders WHERE total_amount >= 250;
 ```
@@ -116,3 +116,12 @@ Expected Result:
 | Alice | History | 4 |
 | Bob | Physics | 3 |
 | Charlie | Mathematics | 3 |
+
+```sql
+-- ANSWER 3 ✅
+
+SELECT s.student_name, c.course_name, c.credits
+FROM students s
+JOIN enrollment e ON s.student_id = e.student_id
+JOIN courses c ON e.course_id = c.course_id;
+```

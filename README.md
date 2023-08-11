@@ -290,3 +290,23 @@ Expected Result:
 | department_id | avg_salary |
 |-----------------|--------------|
 | 1 | 52500.00 |
+
+
+```sql
+--ANSWER - 6 ❌
+-- bard
+SELECT department_id, AVG(salary) AS average_salary
+FROM employees
+INNER JOIN salaries
+ON employees.emp_id = salaries.emp_id
+GROUP BY department_id
+HAVING COUNT(*) >= 2;
+
+-- chat gpt
+SELECT e.department_id, AVG(s.salary) AS avg_salary
+FROM employees e
+JOIN salaries s ON e.emp_id = s.emp_id
+GROUP BY e.department_id
+HAVING COUNT(e.emp_id) >= 2;
+
+```

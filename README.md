@@ -1,4 +1,4 @@
-Task 1: SELECT and WHERE Clause Create a table named "employees" with columns (emp_id, emp_name, department, salary) and insert the following data:
+1️⃣ Task 1: SELECT and WHERE Clause Create a table named "employees" with columns (emp_id, emp_name, department, salary) and insert the following data:
 ```sql
 
 CREATE TABLE employees (
@@ -29,3 +29,29 @@ Expected Result:
 
 SELECT emp_name, salary FROM employees WHERE department = 'HR';
 ```
+
+2️⃣ Task 2: Aggregation and HAVING Clause
+Create a table named "orders" with columns (order_id, customer_id, total_amount) and insert the following data:
+
+```sql
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    total_amount DECIMAL(10, 2)
+);
+
+INSERT INTO orders (order_id, customer_id, total_amount)
+VALUES
+    (101, 1, 200.00),
+    (102, 2, 300.00),
+    (103, 1, 150.00),
+    (104, 3, 400.00),
+    (105, 2, 250.00);
+```
+
+Write an SQL query to find the customer IDs and the average total amount of their orders. Display only those customers whose average total amount is greater than or equal to 250.
+
+Expected Result:
+| customer_id | average_total_amount |
+|----------------|----------------------|
+| 2 | 275.00 |

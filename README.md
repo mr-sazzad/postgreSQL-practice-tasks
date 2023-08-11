@@ -229,6 +229,7 @@ FROM orders
 GROUP BY Month
 ORDER BY Month DESC;
 
+-- ACTUAL WAY 🤕
 
 SELECT 
     CASE EXTRACT(MONTH FROM order_date)

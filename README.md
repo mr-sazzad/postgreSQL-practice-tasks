@@ -187,7 +187,7 @@ Expected Result:
     ORDER BY avg_salary DESC;
 ```
 
-Task 5: Aggregation and Grouping
+5️⃣ Task 5: Aggregation and Grouping
 Create a table named "orders" with columns (order_id, customer_id, order_date, total_amount) and insert the following data:
 
 ```sql
@@ -215,3 +215,40 @@ Expected Result:
 | January | 550.00 | 2 |
 | February | 550.00 | 2 |
 | March | 250.00 | 1 |
+
+
+```sql
+
+--answer - 5 ✅
+
+SELECT 
+    TO_CHAR(order_date, 'Month') AS Month,
+    SUM(total_amount) AS Total_Sales,
+    COUNT(*) AS Num_Orders
+FROM orders
+GROUP BY Month
+ORDER BY Month DESC;
+
+
+SELECT 
+    CASE EXTRACT(MONTH FROM order_date)
+        WHEN 1 THEN 'January'
+        WHEN 2 THEN 'February'
+        WHEN 3 THEN 'March'
+        WHEN 4 THEN 'April'
+        WHEN 5 THEN 'May'
+        WHEN 6 THEN 'June'
+        WHEN 7 THEN 'July'
+        WHEN 8 THEN 'August'
+        WHEN 9 THEN 'September'
+        WHEN 10 THEN 'October'
+        WHEN 11 THEN 'November'
+        WHEN 12 THEN 'December'
+    END AS Month,
+    SUM(total_amount) AS Total_Sales,
+    COUNT(*) AS Num_Orders
+FROM orders
+GROUP BY EXTRACT(MONTH FROM order_date)
+ORDER BY EXTRACT(MONTH FROM order_date);
+
+```

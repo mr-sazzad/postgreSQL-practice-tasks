@@ -61,3 +61,58 @@ Expected Result:
 
 SELECT customer_id, total_amount FROM orders WHERE total_amount >= 250;
 ```
+
+
+3️⃣ Task 3: JOIN and GROUP BY
+Create two tables named "students" and "courses" with columns as follows:
+
+```sql
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50),
+    age INT,
+    gender VARCHAR(10)
+);
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50),
+    credits INT
+);
+
+INSERT INTO students (student_id, student_name, age, gender)
+VALUES
+    (1, 'Alice', 22, 'Female'),
+    (2, 'Bob', 21, 'Male'),
+    (3, 'Charlie', 23, 'Male');
+
+INSERT INTO courses (course_id, course_name, credits)
+VALUES
+    (101, 'Mathematics', 3),
+    (102, 'History', 4),
+    (103, 'Physics', 3);
+
+-- Enrollment table with student-course relationships
+CREATE TABLE enrollment (
+    enrollment_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT
+);
+
+INSERT INTO enrollment (enrollment_id, student_id, course_id)
+VALUES
+    (1, 1, 101),
+    (2, 1, 102),
+    (3, 2, 103),
+    (4, 3, 101);
+```
+
+Write an SQL query to retrieve the student name, course name, and credits for all enrolled courses.
+
+Expected Result:
+| student_name | course_name | credits |
+|----------------|----------------|---------|
+| Alice | Mathematics | 3 |
+| Alice | History | 4 |
+| Bob | Physics | 3 |
+| Charlie | Mathematics | 3 |

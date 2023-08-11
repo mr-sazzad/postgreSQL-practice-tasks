@@ -186,3 +186,32 @@ Expected Result:
     GROUP BY d.department_name -- complex part
     ORDER BY avg_salary DESC;
 ```
+
+Task 5: Aggregation and Grouping
+Create a table named "orders" with columns (order_id, customer_id, order_date, total_amount) and insert the following data:
+
+```sql
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10, 2)
+);
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount)
+VALUES
+    (101, 1, '2023-01-05', 200.00),
+    (102, 2, '2023-01-06', 300.00),
+    (103, 1, '2023-02-10', 150.00),
+    (104, 3, '2023-02-15', 400.00),
+    (105, 2, '2023-03-20', 250.00);
+```
+
+Write an SQL query to find the total sales amount for each month, along with the number of orders in that month.
+
+Expected Result:
+| Month | Total_Sales | Num_Orders |
+|----------|-------------|------------|
+| January | 550.00 | 2 |
+| February | 550.00 | 2 |
+| March | 250.00 | 1 |

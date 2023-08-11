@@ -23,3 +23,9 @@ Expected Result:
 |----------------|-----------|
 | John Doe | 50000.00 |
 | Emily Brown | 52000.00 |
+
+```sql
+-- ANSWARE 1
+
+SELECT emp_name, salary FROM employees WHERE department = 'HR';
+```
